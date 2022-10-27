@@ -1,7 +1,6 @@
-
-
 public class MonsterZoo {
-	double distance=0.0;//歩いた距離
+	// double distance=0.0;//歩いた距離
+	Distance distance = new Distance();
 	int balls=10;//モンスターを捕まえられるボールの数
 	int fruits=0;//ぶつけるとモンスターが捕まえやすくなるフルーツ
 
@@ -21,7 +20,8 @@ public class MonsterZoo {
 
 	//呼び出すと1km distanceが増える
 	void move(){
-		this.distance++;
+		// this.distance++;
+		distance.add(1.0);
 		for(int i=0;i<this.egg.length;i++){//卵は移動距離が進むと孵化するため，何km移動したかを更新する
 			if(this.egg[i]==true){
 				this.eggDistance[i]++;
@@ -91,7 +91,7 @@ public class MonsterZoo {
 		}
 	}
 
-	public double getDistance() {
+	public Distance getDistance() {
 		return distance;
 	}
 

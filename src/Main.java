@@ -26,6 +26,7 @@ public class Main {
 
 		System.out.println("ボールがなくなった！");
 
+		// 捕まえたモンスターの出力
 		for(int i=0;i<pz.getUserMonster().length;i++){
 			if(pz.getUserMonster()[i]!=null){
 				System.out.println(pz.getUserMonster()[i]+"を捕まえた．");
