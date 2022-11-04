@@ -12,7 +12,8 @@ public class Main {
 		while(true){
 			try {
 				Thread.sleep(1000);
-				if(pz.getBalls()>0){
+				// if(pz.getBalls()>0){
+				if (pz.balls.compare(0)) {
 					pz.move();
 					System.out.println("手持ちのボールは"+pz.getBalls()+"個，フルーツは"+pz.getFruits()+"個");
 					System.out.println(pz.getDistance()+"km歩いた．");
