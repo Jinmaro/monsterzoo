@@ -1,5 +1,4 @@
 // Distance型
-import java.io.PrintWriter;
 public class Distance {
     double distance;
     public Distance(double distance) {

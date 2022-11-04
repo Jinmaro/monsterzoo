@@ -3,7 +3,8 @@ public class MonsterZoo {
 	Distance distance = new Distance();	//歩いた距離
 	// int balls=10;//モンスターを捕まえられるボールの数
 	Balls balls = new Balls(10); //モンスターを捕まえられるボールの数
-	int fruits=0;//ぶつけるとモンスターが捕まえやすくなるフルーツ
+	// int fruits=0;//ぶつけるとモンスターが捕まえやすくなるフルーツ
+	Fruits fruits = new Fruits(); //ぶつけるとモンスターが捕まえやすくなるフルーツ
 
 	//卵は最大9個まで持てる．卵を取得するとeggにtrueが代入され，
 	//移動するたびに,eggDistanceに1.0kmずつ加算される．
@@ -37,8 +38,9 @@ public class MonsterZoo {
 			int e=(int)(Math.random()*2);
 			System.out.println("ボールを"+b+"個，"+"フルーツを"+f+"個"+"卵を"+e+"個Getした！");
 			// this.balls=this.balls+b;
+			// this.fruits=this.fruits+f;
 			balls.add(b);
-			this.fruits=this.fruits+f;
+			fruits.add(f);
 			if(e>=1){//卵を1つ以上Getしたら
 				//egg[]に10個以上卵がない場合は新しい卵データをセットする
 				for(int i=0;i<this.eggDistance.length;i++){
@@ -55,9 +57,11 @@ public class MonsterZoo {
 			// for(int i=0;i<3&&balls>0;i++){//捕まえる or 3回ボールを投げるまで繰り返す
 			for(int i =0; i < 3 && balls.compare(0); i++) { //捕まえる or 3回ボールを投げるまで繰り返す
 				int r = (int)(6*Math.random());//0~5までの数字をランダムに返す
-				if(this.fruits>0){
+				// if(this.fruits>0){
+				if (fruits.compare(0)) {
 					System.out.println("フルーツを投げた！捕まえやすさが倍になる！");
-					this.fruits--;
+					// this.fruits--;
+					fruits.decrement();
 					r = r * 2;
 				}
 				System.out.println(this.monsterZukan[m]+"にボールを投げた");
@@ -103,7 +107,7 @@ public class MonsterZoo {
 		return balls;
 	}
 
-	public int getFruits() {
+	public Fruits getFruits() {
 		return fruits;
 	}
 
